@@ -91,7 +91,7 @@ export default function ResultsDashboard({ data }: { data: any }) {
                                 <div className="mt-4">
                                     <h4 className="font-semibold text-slate-800 mb-2">Quality Warnings:</h4>
                                     <ul className="list-disc pl-5 space-y-1 text-slate-600">
-                                        {data.warning_flags.map((flag: str, i: number) => (
+                                        {data.warning_flags.map((flag: string, i: number) => (
                                             <li key={i}>{flag}</li>
                                         ))}
                                     </ul>
