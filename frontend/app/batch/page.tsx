@@ -13,7 +13,7 @@ export default function BatchAnalysisPage() {
     const [isUploading, setIsUploading] = useState(false);
     const [progress, setProgress] = useState(0);
     const [jobStatus, setJobStatus] = useState<'idle' | 'processing' | 'completed'>('idle');
-    const [jobId, setJobId] = useState<str | null>(null);
+    const [jobId, setJobId] = useState<string | null>(null);
 
     const mockResults = [
         { variant: "BRCA1:c.181T>G", prob: "82%", class: "Pathogenic", ci: "[0.72, 0.92]" },
