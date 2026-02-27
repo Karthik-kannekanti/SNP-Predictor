@@ -15,9 +15,10 @@ class ModelInference:
         Load XGBoost model from disk.
         For demonstration, if it doesn't exist, we create and train a dummy model.
         """
-        model_path = "/app/models/xgboost_model.json"
-        if not os.path.exists("/app/models"):
-            os.makedirs("/app/models", exist_ok=True)
+        models_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "models")
+        model_path = os.path.join(models_dir, "xgboost_model.json")
+        if not os.path.exists(models_dir):
+            os.makedirs(models_dir, exist_ok=True)
             
         if os.path.exists(model_path):
             self.model = xg.XGBClassifier()

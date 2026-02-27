@@ -41,7 +41,8 @@ export default function BatchAnalysisPage() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('http://localhost:8000/api/v1/predict-batch', {
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+            const response = await fetch(`${baseUrl}/api/v1/predict-batch`, {
                 method: 'POST',
                 body: formData,
             });

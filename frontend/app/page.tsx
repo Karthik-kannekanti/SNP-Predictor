@@ -16,7 +16,8 @@ export default function Home() {
 
     const mutation = useMutation({
         mutationFn: async (newVariant: any) => {
-            const response = await fetch('http://localhost:8000/api/v1/predict-single', {
+            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+            const response = await fetch(`${baseUrl}/api/v1/predict-single`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
